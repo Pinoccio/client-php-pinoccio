@@ -10,7 +10,7 @@ require("./client-php-pinoccio/pinoccio.php");
 $api = new \pinoccio\Pinoccio();
 $api->login("user","password"));
 
-$troopState = $api->rest("get","/v1/sync",array("tail"=>0))
+$troopState = $api->rest("get","/v1/sync",array("tail"=>0));
 
 var_dump($troopState);
 
