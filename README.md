@@ -7,9 +7,14 @@ php client library for interacting with your scouts via the pinoccio api
 ```php
 <?
 require("./client-php-pinoccio/pinoccio.php");
-$api = new \pinoccio\Pinoccio();
+
+// you can get your api token from https://hq.pinocc.io/settings
+$api = new \pinoccio\Pinoccio($token);
+
+// if you dont have a token and dont mind hardcoding credentials in a script =(.
 $api->login("user","password"));
 
+// if you have a token already skip login and set the token
 $troopState = $api->rest("get","/v1/sync",array("tail"=>0));
 
 var_dump($troopState);
